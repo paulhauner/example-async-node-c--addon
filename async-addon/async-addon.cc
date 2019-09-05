@@ -91,11 +91,11 @@ namespace asyncAddon
     
     // https://stackoverflow.com/questions/13826803/calling-javascript-function-from-a-c-callback-in-v8/28554065#28554065
 
-    printf( "%s\n\n" , "Async function callback calling ..." ) ;
+    printf( "%s" , "Async function callback calling ..." ) ;
 
     Local<Function>::New( isolate , work->callback )->Call( context , recv , 1 , argv );
     
-    printf( "\n%s\n" , "... Async function callback returned." ) ;
+    printf( "%s\n" , "... Async function callback returned." ) ;
 
     work->callback.Reset( isolate , work->callback ) ;
 
